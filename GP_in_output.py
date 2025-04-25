@@ -59,7 +59,7 @@ F_train_noisy = F_train + noise_std * np.random.randn(N_train)
 # ---------------------------
 # 5. Generate test data
 # ---------------------------
-N_test = 100
+N_test = 1
 X_test = np.random.uniform(-5, 5, size=(N_test, d))
 
 # ---------------------------
@@ -81,8 +81,8 @@ upper_bound = mu_F + beta * sigma_F
 # ---------------------------
 # 8. Print prediction results
 # ---------------------------
-print("GP Prediction using RBF Kernel (first 5 test points):")
-for i in range(5):
+print("GP Prediction using RBF Kernel:")
+for i in range(N_test):
     print(f"x = {X_test[i]}: mu = {mu_F[i]:.3f}, sigma = {sigma_F[i]:.3f}, Bound = [{lower_bound[i]:.3f}, {upper_bound[i]:.3f}]")
 
 # ---------------------------
